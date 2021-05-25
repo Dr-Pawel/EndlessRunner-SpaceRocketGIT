@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerControlls : MonoBehaviour
 {
+
     public GameObject canves;
+    [SerializeField] private TMP_Text GameOver;
+   [SerializeField] private TMP_Text GemsText;
     public Rigidbody2D rb;
     public float moveSpeed = 5;
     // Start is called before the first frame update
@@ -24,8 +28,23 @@ public class PlayerControlls : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Obstacle" ))
         {
-            Time.timeScale = 0f;
+            Time.timeScale = 0f; 
+           bool isNewHighscore =  Score.Instance.CheckNewHighscore();
+            if(isNewHighscore )
+            {
+                GameOver.text = "New HighScore!!!";
+            }
+
+            int moneyMadeThisGame = PlayerMoney.Instance.GetMoneyMadeAndSaveMoney();
+            GemsText.text = "Gems: " + moneyMadeThisGame;
+
             FindObjectOfType<GameManager>().EndGame();
         }
+        if ((other.gameObject.CompareTag("collectibles")))
+        {
+            PlayerMoney.Instance.AddMoney(1);
+            other.gameObject.SetActive(false);
+        }
+
     }
 }
