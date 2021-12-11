@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-
     bool gameHasEnded = false;
     public GameObject RestartUI;
     public void EndGame()
@@ -12,7 +11,6 @@ public class GameManager : MonoBehaviour
             gameHasEnded = true;
             RestartUI.SetActive(true);
             Debug.Log("GAME OVER");
-           
         }
         
     }

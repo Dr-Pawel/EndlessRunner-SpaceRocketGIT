@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
 
 public class menuScript : MonoBehaviour
 {
@@ -9,13 +8,7 @@ public class menuScript : MonoBehaviour
     public GameObject CanvasAch;
     public GameObject CanvasOpt;
     public GameObject InGameUI;
-    public TMP_Text GemsMenu;
 
-
-    public void Start()
-    {
-        GemsMenu.text = PlayerMoney.Instance.currentMoney.ToString();
-    }
     public void PlayGame()
     {
         SceneManager.LoadScene("Gra Statek");
