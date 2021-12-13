@@ -3,7 +3,10 @@ guid: 501b8c2a56320b344a83cb4c5fcb3f64
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - newScore: {instanceID: 0}
+  - trophy1: {fileID: 9035410792438127051, guid: 619d4ceb4ae4c8640af550452bb76ff6, type: 3}
+  - trophy2: {fileID: 5813394117146374426, guid: 16b4226f7bd3dd746bbef68f807a4947, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

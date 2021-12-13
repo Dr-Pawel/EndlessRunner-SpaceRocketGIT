@@ -1,13 +1,24 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class menuScript : MonoBehaviour
 {
-    public GameObject Player;
+    public static menuScript Instance;
+
     public GameObject CanvasMain;
     public GameObject CanvasAch;
     public GameObject CanvasOpt;
-    public GameObject InGameUI;
+
+    private void Awake()
+    {
+        Instance = this;
+        
+    }
+    private void Update()
+    {
+        ShopManager.Instance.UpdateMoneyInMenu();
+    }
 
     public void PlayGame()
     {
@@ -29,6 +40,7 @@ public class menuScript : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+        Debug.Log("Quiting ...");
     }
 
 }
