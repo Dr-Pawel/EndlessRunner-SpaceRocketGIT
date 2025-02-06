@@ -1,4 +1,4 @@
-# Heading Space Rocket
+# Space Rocket
 
 **Simple endless runner type game made in Unity Engine.**    
 **Avoid asteroids, collect points and unlock new vehicles.**
